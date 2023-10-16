@@ -5,9 +5,12 @@ import { Component } from "@angular/core";
     templateUrl: "./server.component.html",
     styles: [`p{
                 padding: 10px;
-                background-color:antiquewhite;
                 font-weight: bold;
-                border: 2px solid brown;
+                border: 2px solid;
+            }
+            .online{
+                color: white;
+                border: 2px solid black
             }`]
 })
 export class ServerComponent{
