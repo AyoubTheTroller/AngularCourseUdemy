@@ -1,0 +1,8 @@
+<button (click)="HideParaghraph()">Display Details</button>
+<p [hidden]="isHidden">Hidden Content</p>
+<ul>
+    <ng-container *ngFor="let log of logButtonClicks">
+        <li [ngStyle]="shouldApplyBlueBg(log) ? {backgroundColor: 'blue'} : {}"
+            [ngClass]="{'logTextColor': shouldApplyBlueBg(log)}">{{ log }}</li>
+    </ng-container>
+</ul>
