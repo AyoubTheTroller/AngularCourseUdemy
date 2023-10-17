@@ -24,4 +24,8 @@ export class AppComponent {
     })
   }
 
+  ngOnDestroyFirst(): void{
+    this.serverElements.splice(0, 1);
+  }
+
 }
