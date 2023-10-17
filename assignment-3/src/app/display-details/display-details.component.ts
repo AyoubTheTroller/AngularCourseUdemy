@@ -17,7 +17,7 @@ export class DisplayDetailsComponent {
     this.logButtonClicks.push("Click: " + this.buttonClicksCounter++);
   }
 
-  shouldApplyBlueBg(log: string): boolean {
+  shouldApplyBlueBgAndWhiteText(log: string): boolean {
     const position = this.logButtonClicks.indexOf(log);
     return position >= 5;
   }
