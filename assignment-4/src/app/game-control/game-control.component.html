@@ -1,1 +1,21 @@
-<p>GAme Control</p>
+<!--
+    
+    FIRST VERSION EMITTING THE VALUE FROM PARENT TO CHILD
+
+<div class="button-container">
+    <button class="start-button" (click)="startGame()">Start</button>
+    <button class="stop-button" (click)="stopGame()">Stop</button>
+</div>
+<hr>
+<ng-container *ngIf="valueEmitted % 2 === 0">
+    <app-even [value]="valueEmitted"></app-even>
+</ng-container>
+
+<ng-container *ngIf="valueEmitted % 2 !== 0">
+    <app-odd [value]="valueEmitted"></app-odd>
+</ng-container>--> 
+
+<div class="button-container">
+    <button class="start-button" (click)="startEmittingValues()">Start</button>
+    <button class="stop-button" (click)="stopEmittingValues()">Stop</button>
+</div>
