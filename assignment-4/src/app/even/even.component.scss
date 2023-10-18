@@ -1,0 +1,32 @@
+/* styles.scss */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.alert-panel {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    text-align: center;
+}
+
+.alert-text {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.alert-number {
+    font-weight: bold;
+}
