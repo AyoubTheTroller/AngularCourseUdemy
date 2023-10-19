@@ -1,0 +1,101 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+      <br><br>
+      <!-- <ul class="list-group">
+        <ng-containter *ngTemplateOutlet="onlyOdd ? odds : evens"></ng-containter>
+        <ng-template #evens>
+          <li
+            class="list-group-item" 
+            [ngClass]="{even: even%2!==0}"
+            appBasicHighLight
+            *ngFor="let even of evenNumbers">{{even}}
+          </li>
+        </ng-template>
+        <ng-template #odds>
+          <li
+            class="list-group-item" 
+            [ngClass]="{even: odd%2!==0}"
+            [ngStyle]="{backgroundColor: odd%2!==0 ? 'green' : 'transparent'}"
+            *ngFor="let odd of oddNumbers">{{odd}}
+          </li>
+        </ng-template>
+      </ul> -->
+      
+      <!-- <ul class="list-group">
+        <ng-template [ngIf] = "!onlyOdd">
+          <li
+            class="list-group-item" 
+            [ngClass]="{even: even%2!==0}"
+            appBasicHighLight
+            *ngFor="let even of evenNumbers">{{even}}
+          </li>
+        </ng-template>
+        <ng-template [ngIf] = "onlyOdd">
+          <li
+            class="list-group-item" 
+            [ngClass]="{even: odd%2!==0}"
+            [ngStyle]="{backgroundColor: odd%2!==0 ? 'green' : 'transparent'}"
+            *ngFor="let odd of oddNumbers">{{odd}}
+          </li>
+        </ng-template>
+      </ul> -->
+
+      <!-- Using Custom structural directive-->
+      <ul class="list-group">
+        <div *appUnless="!onlyOdd">
+          <li
+            class="list-group-item" 
+            [ngClass]="{even: even%2!==0}"
+            appBasicHighLight
+            *ngFor="let even of evenNumbers">{{even}}
+          </li>
+        </div>
+        <div *appUnless="onlyOdd">
+          <li
+            class="list-group-item" 
+            [ngClass]="{even: odd%2!==0}"
+            [ngStyle]="{backgroundColor: odd%2!==0 ? 'green' : 'transparent'}"
+            *ngFor="let odd of oddNumbers">{{odd}}
+          </li>
+        </div>
+      </ul>
+
+      <div [ngSwitch]="valueForNgSwitch">
+        <p *ngSwitchCase="10">{{valueForNgSwitch}}</p>
+        <p *ngSwitchCase="100">{{valueForNgSwitch}}</p>
+        <p *ngSwitchCase="1000">{{valueForNgSwitch}}</p>
+        <p *ngSwitchCase="10000">{{valueForNgSwitch}}</p>
+      </div>
+
+      <p appBetterHighlight [default]="'red'" [hover]="'blue'">Better Highlight try</p>
+      <!-- IF WE ARE USING PROPERTY BINDING WITH DIRECTIVES WE CAN SIMPLY REMOVE THE SQUARE BRACKETS IF WE ARE PASSING A STRING 
+        <p appBetterHighlight default="red" hover="blue">Better Highlight try</p>-->
+
+        <!-- <ul class="list-group">
+          <ng-containter *ngIf="!onlyOdd">
+            <li
+              class="list-group-item" 
+              [ngClass]="{even: even%2!==0}"
+              *ngFor="let even of evenNumbers">{{even}}
+            </li>
+          </ng-containter>
+          <ng-containter 
+          *ngIf="onlyOdd">
+            <li
+              class="list-group-item" 
+              [ngClass]="{even: odd%2!==0}"
+              [ngStyle]="{backgroundColor: odd%2!==0 ? 'green' : 'transparent'}"
+              *ngFor="let odd of oddNumbers">{{odd}}
+            </li>
+          </ng-containter>
+        </ul> -->
+      <!-- <ng-template [ngIf]="onlyOdd">
+        <p>Only odd</p>
+      </ng-template> -->
+    </div>
+  </div>
+</div>
