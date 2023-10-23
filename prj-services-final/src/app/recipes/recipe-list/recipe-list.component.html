@@ -6,9 +6,14 @@
 <hr>
 <div class="row">
   <div class="col-xs-12">
-    <app-recipe-item
+    <!-- <app-recipe-item
       *ngFor="let recipeEl of recipes"
-      [recipe]="recipeEl"></app-recipe-item>
+      [recipe]="recipeEl"></app-recipe-item> -->
+      <div *ngFor="let recipe of recipes; let i = index" class="list-group">
+        <a [routerLink]="['/recipes', i]" class="list-group-item clearfix" routerLinkActive="active">
+          <app-recipe-item [recipe]="recipe"></app-recipe-item>
+        </a>
+      </div>
   </div>
 </div>
 
