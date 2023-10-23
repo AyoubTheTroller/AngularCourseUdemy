@@ -1,0 +1,59 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
+    <div id="email-box" ngModelGroup="userData" #userData="ngModelGroup">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" 
+        ngModel id="email" 
+        name="email" 
+        class="form-control"
+        required
+        email
+        #email="ngModel"/>
+        <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+      </div>
+      
+      <button class="btn btn-default" type="button"  (click)="suggestEmail()">Suggest Email</button>
+      <div class="form-group">
+        <hr>
+        <label for="password">password</label>
+        <input type="password" 
+        id="password" 
+        name="password" 
+        ngModel 
+        required
+        class="form-control"
+        #password = "ngModel"/>
+        <span class="help-block" *ngIf="!password.valid && password.touched">Please enter a valid password!</span>
+      </div>
+      
+    </div>
+    <div class="form-group">
+      <label for="secret">Select subscription</label>
+      <select
+        id="sub"
+        class="form-control"
+        [ngModel]="defaultSub"
+        name="subscription">
+        <option value="basic">Basic</option>
+        <option value="advanced">Advanced</option>
+        <option value="pro">Pro</option>
+      </select>
+    </div>
+    <p *ngIf="!userData.valid && userData.touched">User Data is invalid!</p>
+    <button
+    class="btn btn-primary"
+    type="submit"
+    [disabled]="!f.valid">Submit</button>
+  </form>
+
+  
+  <hr>
+  <div class="row" *ngIf="submitted">
+    <div class="col-xs-12">
+      <h3>Your Data</h3>
+      <p>Mail: {{ user.email }}</p>
+      <p>Subscription {{ user.subscription }}</p>
+    </div>
+  </div>
+</div>
